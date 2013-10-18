@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Copyright (c) 2013 4Shot Development. All rights reserved.
+-->
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="jaeger.Html5Video"
+    version="1.0.0">
+
+  <name>Html5Video</name>
+  <author>jaeger25</author> 
+  
+  <js-module src="www/Html5Video.js" name="Html5Video">
+    <clobbers target="plugins.html5Video" />
+  </js-module>
+  
+  <platform name="android">
+    <source-file src="src/android/Html5Video.java" target-dir="src/org/apache/cordova/plugin" />
+  </platform>
+
+</plugin>
