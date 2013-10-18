@@ -69,10 +69,3 @@ Html5Video.prototype._play = function(video) {
 }
 
 module.exports = new Html5Video();
-
-if (!window.plugins) {
-	window.plugins = {};
-}
-if (!window.plugins.html5Video) {
-	window.plugins.html5Video = cordova.require("cordova/plugin/html5video");
-}

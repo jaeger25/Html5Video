@@ -14,7 +14,14 @@
     <clobbers target="plugins.html5Video" />
   </js-module>
   
+  <dependency id="com.plugin.id" url="https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git" />
+  
   <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="Html5Video" >
+            <param name="android-package" value="org.apache.cordova.plugin.Html5Video"/>
+        </feature>
+    </config-file>
     <source-file src="src/android/Html5Video.java" target-dir="src/org/apache/cordova/plugin" />
   </platform>
 

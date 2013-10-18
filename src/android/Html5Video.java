@@ -2,10 +2,7 @@ package org.apache.cordova.plugin;
 
 import java.util.Timer;
 
-import org.apache.cordova.api.CallbackContext;
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.LOG;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
