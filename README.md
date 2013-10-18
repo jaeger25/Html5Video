@@ -7,15 +7,27 @@ This plugin allows playback of local video files using embedded html 5 video tag
 
 ## Setup ##
 
-1. Make sure the <manifest> tag in AndroidManifest.xml has android:hardwareAccelerated="true"
-2. Add <plugin name="Html5Video" value="org.apache.cordova.plugin.Html5Video"/> to config.xml
-3. Add the file Html5Video.java from the org.apache.cordova.plugin package to your src folder
-4. Create a folder called raw inside the res folder and put any video files in it. (not poster image files)
-5. Add any poster image files to your www folder 
-6. Create any video tags within your html pages as normal, making sure to give each video tag an id. The video tags should be empty, ie no <source> tags inside
-7. Add the Html5Video.js file to your project's js folder and include it in index.html after cordova.js
+1. Create your cordova project: cordova create ProjectName
+2. Add platforms: cordova platform add android
+3. Add the plugin: cordova plugin add https://github.com/jaeger25/Html5Video.git
 
-## Usage ##
+The next changes should be done inside your PlatformName/www folder
+
+4. Create any video tags within your html pages as normal, making sure to give each video tag an id. The video tags should be empty, ie no <source> tags inside
+5. Add any poster image files to your www folder 
+
+
+The next changes should be done inside your ProjectName/platforms/android folder
+
+6. Make sure the <manifest> tag in AndroidManifest.xml has android:hardwareAccelerated="true"
+7. Create a folder called raw inside the res folder and put any video files in it. (not poster image files)
+
+
+
+8. run cordova build
+9. launch app
+
+## Code Usage ##
 
 After device ready, call window.plugins.html5Video.initialize(videos). See Html5Video.js for parameter info
 Anytime you wish to play a video, call window.plugins.html5Video.play(videoId, callback). See Html5Video.js for parameter info
