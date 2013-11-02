@@ -29,5 +29,5 @@ The next changes should be done inside your ProjectName/platforms/android folder
 
 ## Code Usage ##
 
-After device ready, call window.plugins.html5Video.initialize(videos). See Html5Video.js for parameter info
-Anytime you wish to play a video, call window.plugins.html5Video.play(videoId, callback). See Html5Video.js for parameter info
+After device ready, call window.plugins.html5Video.initialize({"video1":"video1file.mp4", "video2":"video2file.mp4"}). See Html5Video.js for parameter info
+Anytime you wish to play a video, call window.plugins.html5Video.play("video1", callback).
