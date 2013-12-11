@@ -64,7 +64,7 @@ Html5Video.prototype._play = function(video) {
 		    if (!!me._callbacks[videoId]) {
 		        me._callbacks[videoId](video);
 		        if (!video.loop) {
-		            delete callbacks[videoId];
+		            delete me._callbacks[videoId];
 		        }
 		    }
 		}
