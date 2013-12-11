@@ -56,10 +56,17 @@ Html5Video.prototype._play = function(video) {
 			&& Math.round(video.duration) - Math.round(video.currentTime) == 0) {
 			
 			//if loop atribute is set, restart video
-			if (video.loop) video.currentTime = 0;
+		    if (video.loop) {
+		        video.currentTime = 0;
+		    }
 			
 			//if a callback function was set, trigger it
-			if (!!me._callbacks[videoId]) me._callbacks[videoId](video);
+		    if (!!me._callbacks[videoId]) {
+		        me._callbacks[videoId](video);
+		        if (!video.loop) {
+		            delete callbacks[videoId];
+		        }
+		    }
 		}
 	}, false);
 	
