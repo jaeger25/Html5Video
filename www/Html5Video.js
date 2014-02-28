@@ -17,7 +17,7 @@ Html5Video.prototype.initialize = function(videos) {
 		return false;
 
 	me._videos = videos;
-	if (device.platform == 'Android') {
+	if (device.platform == 'Android' || device.platform == 'amazon-fireos') {
 		return cordova.exec(function(result) {
 			me._videos = result;
 		}, function(err) {
@@ -34,7 +34,7 @@ Html5Video.prototype.play = function(videoId, callback) {
 	var me = this;
 	me._callbacks[videoId] = callback;
 
-	if (device.platform == 'Android') {
+	if (device.platform == 'Android' || device.platform == 'amazon-fireos') {
 		return cordova.exec(function(result) {			
 		}, function(err) {
 			console.error('html video error: ' + err);
