@@ -7,7 +7,10 @@ This plugin enables the use of normal HTML5 <video> tags for local video - other
 Android Webview (which Cordova is based upon) limits access to local files (such as videos) and prohibits reading them, both via relative files and `file:///` URIs. Cordova Html5Video Plugin solves this by giving each of you video a `android.resource://` path and updating your `<video>` tags accordingly.
 
 ### Limitations ###
-For Android only. Tested on Android API 15-18 (testing for API 19 is undergoing).
+For Android only. Tested on Android API 15-19.
+
+For API >= 19, a workaround is employed to copy the video files over to your application's data directory, as world-readable.
+*WARNING*: this is potentially insecure - other apps will be able to read your videos! However it is the only way to get around Chrome's strict limitations on content:// URLs. See Issue #20 for details.
 
 ### Install ###
 
