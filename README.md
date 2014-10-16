@@ -10,7 +10,8 @@ Android Webview (which Cordova is based upon) limits access to local files (such
 For Android only. Tested on Android API 15-19.
 
 For API >= 19, a workaround is employed to copy the video files over to your application's data directory, as world-readable.
-*WARNING*: this is potentially insecure - other apps will be able to read your videos! However it is the only way to get around Chrome's strict limitations on content:// URLs. See Issue #20 for details.
+
+*WARNING*: this is potentially insecure - other apps will be able to read your videos! However it is the only way to get around Chrome's strict limitations on content:// URLs. See [Issue #20](https://github.com/jaeger25/Html5Video/issues/20) for details.
 
 ### Install ###
 
