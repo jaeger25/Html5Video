@@ -10,7 +10,7 @@ Html5Video.prototype._callbacks = {};
  * alpha-numeric characters 
  * eg: {"video1":"video1file.mp4", "video2":"video2file.mp4"}
  */
-Html5Video.prototype.initialize = function(videos) {
+Html5Video.prototype.initialize = function(videos, callback) {
 	var me = this;
 
 	if (!videos)
@@ -20,6 +20,7 @@ Html5Video.prototype.initialize = function(videos) {
 	if (device.platform == 'Android' || device.platform == 'amazon-fireos') {
 		return cordova.exec(function(result) {
 			me._videos = result;
+                        if(callback)callback();
 		}, function(err) {
 			console.error('html video error: ' + err);
 		}, 'Html5Video', 'initialize', [ videos ]);

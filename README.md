@@ -57,16 +57,38 @@ If your file doesn't meet the above requirements `cordova build` will fail to co
 After [deviceReady](http://docs.phonegap.com/en/edge/cordova_events_events.md.html#deviceready) callback from Cordova, initialize your videos with:
 
 ```javascript
-window.plugins.html5Video.initialize( { "id":"path", ... } ) 
+window.plugins.html5Video.initialize( { "id":"path", ... } [, callback] ) 
 ```
 
-Example:
+Where callback is optional and is triggered when initialization finished (at the end)
+
+Examples:
+
+Initialization for video1 and video2 with no callback:
 
 ```javascript
 window.plugins.html5Video.initialize({
       "video1" : "video1file.mp4", 
      "video2" : "video2file.mp4"
   })
+```
+
+Initialize video1 and call function finished:
+
+```javascript
+window.plugins.html5Video.initialize({
+      "video1" : "video1file.mp4"
+  }, finished)
+```
+
+Initialize video1 with [anonymous function](http://kangax.github.io/nfe/#names-in-debuggers) (usefull for playing a video at statup):
+
+```javascript
+window.plugins.html5Video.initialize({
+      "video1" : "video1file.mp4"
+  }, function initializeIsFinished() {
+  window.plugins.html5Video.play("video1")
+})
 ```
 
 ### Playing a video ###
